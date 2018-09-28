@@ -13,11 +13,7 @@ use Spryker\Zed\ProductPageSearch\Dependency\Plugin\ProductPageDataExpanderInter
  */
 class ModelProductDataExpanderPlugin extends AbstractPlugin implements ProductPageDataExpanderInterface
 {
-    protected const KEY_FK_PRODUCT_ABSTRACT = 'fk_product_abstract';
-
     /**
-     * {@inheritdoc}
-     *
      * @api
      *
      * @param array $productData
@@ -27,43 +23,9 @@ class ModelProductDataExpanderPlugin extends AbstractPlugin implements ProductPa
      */
     public function expandProductPageData(array $productData, ProductPageSearchTransfer $productAbstractPageSearchTransfer): void
     {
-        $idProductAbstract = $this->getIdProductAbstract($productData);
-        $modelsCollection = $this->getFactory()->getModelProductFacade()->getModelsByProductAbstractId($idProductAbstract);
-
-        $modelNames = $this->getModelNames($modelsCollection);
-
-        $names = new ModelProductSearchTransfer();
-        $names->setNames($modelNames);
-
-        $productAbstractPageSearchTransfer->setProductModels($names);
-    }
-
-    /**
-     * Get model names
-     *
-     * @param \Generated\Shared\Transfer\ModelCollectionTransfer $modelsCollection
-     *
-     * @return array
-     */
-    protected function getModelNames(ModelCollectionTransfer $modelsCollection): array
-    {
-        $names = [];
-
-        foreach ($modelsCollection->getModels() as $modelTransfer) {
-            /** @var \Generated\Shared\Transfer\ModelTransfer $modelTransfer */
-            $names[] = $modelTransfer->getName();
+        $attributes = json_decode($productData['attributes'], true);
+        if (array_key_exists('model', $attributes)) {
+            $productAbstractPageSearchTransfer->setModel($attributes['model']);
         }
-
-        return $names;
-    }
-
-    /**
-     * @param array $productData
-     *
-     * @return int
-     */
-    protected function getIdProductAbstract(array $productData): int
-    {
-        return $productData[static::KEY_FK_PRODUCT_ABSTRACT];
     }
 }

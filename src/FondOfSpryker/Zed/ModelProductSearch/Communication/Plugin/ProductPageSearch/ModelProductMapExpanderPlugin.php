@@ -14,11 +14,9 @@ use Spryker\Zed\Search\Business\Model\Elasticsearch\DataMapper\PageMapBuilderInt
  */
 class ModelProductMapExpanderPlugin extends AbstractPlugin implements ProductPageMapExpanderInterface
 {
-    protected const KEY_PRODUCT_MODEL = 'product_models';
+    protected const KEY_MODEL = 'model';
 
     /**
-     * {@inheritdoc}
-     *
      * @api
      *
      * @param \Generated\Shared\Transfer\PageMapTransfer $pageMapTransfer
@@ -30,26 +28,10 @@ class ModelProductMapExpanderPlugin extends AbstractPlugin implements ProductPag
      */
     public function expandProductPageMap(PageMapTransfer $pageMapTransfer, PageMapBuilderInterface $pageMapBuilder, array $productData, LocaleTransfer $localeTransfer): PageMapTransfer
     {
-        if (!isset($productData[static::KEY_PRODUCT_MODEL])) {
-            return $pageMapTransfer;
+        if (isset($productData[static::KEY_MODEL])) {
+            $pageMapTransfer->setModel($productData[static::KEY_MODEL]);
         }
 
-        $transfer = $this->getModelProductSearchData($productData);
-        $pageMapTransfer->setProductModels($transfer);
-
         return $pageMapTransfer;
-    }
-
-    /**
-     * @param array $productData
-     *
-     * @return \Generated\Shared\Transfer\ModelProductSearchTransfer
-     */
-    protected function getModelProductSearchData(array $productData): ModelProductSearchTransfer
-    {
-        $transfer = new ModelProductSearchTransfer();
-        $transfer->fromArray($productData[static::KEY_PRODUCT_MODEL]);
-
-        return $transfer;
     }
 }
