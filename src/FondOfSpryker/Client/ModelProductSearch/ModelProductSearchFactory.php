@@ -1,6 +1,6 @@
 <?php
 
-namespace Spryker\Client\ModelProductSearch;
+namespace  FondOfSpryker\Client\ModelProductSearch;
 
 use Generated\Shared\Search\PageIndexMap;
 use Spryker\Client\Kernel\AbstractFactory;
