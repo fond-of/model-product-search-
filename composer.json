@@ -23,7 +23,7 @@
     "require": {
         "php": ">=7.1",
         "spryker/search": "^8.8.1",
-        "fond-of-spryker/product-attribute-expander": "^1.1.0"
+        "fond-of-spryker/product-attribute-expander": "dev-spryker_upgrade"
     },
     "require-dev": {
         "spryker/code-sniffer": "^0.14.7",
