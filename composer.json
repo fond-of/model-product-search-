@@ -21,8 +21,8 @@
         }
     ],
     "require": {
-        "php": ">=7.1",
-        "spryker/search": "^8.8.1",
+        "php": ">=7.2",
+        "spryker/search": "^8.11.1",
         "fond-of-spryker/product-attribute-expander": "dev-spryker_upgrade"
     },
     "require-dev": {
