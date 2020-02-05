@@ -2,7 +2,6 @@
 
 namespace FondOfSpryker\Zed\ModelProductSearch\Communication\Plugin\ProductPageSearch;
 
-use Generated\Shared\Transfer\ModelProductSearchTransfer;
 use Generated\Shared\Transfer\LocaleTransfer;
 use Generated\Shared\Transfer\PageMapTransfer;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
