@@ -21,16 +21,16 @@
         }
     ],
     "require": {
-        "php": ">=7.1",
-        "spryker/search": "^8.0.0",
-        "fond-of-spryker/product-attribute-expander": "^1.1.0"
+        "php": ">=7.2",
+        "spryker/search": "^8.11.1",
+        "fond-of-spryker/product-attribute-expander": "dev-spryker_upgrade"
     },
     "require-dev": {
-        "spryker/code-sniffer": "^0.11",
-        "codeception/codeception": "^2.3",
-        "mikey179/vfsStream": "^1.6",
+        "spryker/code-sniffer": "^0.14.7",
+        "codeception/codeception": "^2.5",
+        "mikey179/vfsstream": "^1.6",
         "phpro/grumphp": "^0.14",
-        "sebastian/phpcpd": "^4.0",
+        "sebastian/phpcpd": "^4.1",
         "php-coveralls/php-coveralls": "^2.0"
     },
     "minimum-stability": "dev",

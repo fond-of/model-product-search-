@@ -2,8 +2,6 @@
 
 namespace FondOfSpryker\Zed\ModelProductSearch\Communication\Plugin\ProductPageSearch;
 
-use Generated\Shared\Transfer\ModelCollectionTransfer;
-use Generated\Shared\Transfer\ModelProductSearchTransfer;
 use Generated\Shared\Transfer\ProductPageSearchTransfer;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 use Spryker\Zed\ProductPageSearch\Dependency\Plugin\ProductPageDataExpanderInterface;
